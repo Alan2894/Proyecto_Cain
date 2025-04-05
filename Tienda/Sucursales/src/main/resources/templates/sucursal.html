@@ -1,0 +1,73 @@
+<!-- *Universidad Politecnica De Francisco I. Madero
+ Ingenieria En Sistemas Computacionales
+ Alumnos: Diego Iván Chávez Candelaria
+ 		  Luis Alberto Garcia Alvarez
+ Grupo: 8SCG2
+ Objetivo: mostrar una lista de sucursales utilizando los diferentes paquetes vistos en clase.
+ Fecha: 04/03/2025
+ -->
+  
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Sucursales</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<center>
+<h2>Lista de Sucursales</h2>
+</center>
+<table>
+    <thead>
+        <tr>
+            <th>ID_Gerente</th>
+            <th>ID_Sucursal</th>
+            <th>Nombre De Sucursal</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+			<th>Correo Electrónico</th>
+			<th>Estatus</th>
+			<th>Horario</th>
+			<th>Cuenta</th>
+			<th>Usuario</th>
+			<th>Contraseña</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="sucursal : ${sucursales}">
+            <td th:text="${sucursal.idGerente}">ID_Gerente</td>
+            <td th:text="${sucursal.idSucursalFk}">ID_Sucursal</td>
+            <td th:text="${sucursal.nombreSucursal}">Nombre De Sucursal</td>
+            <td th:text="${sucursal.direccion}">Dirección</td>
+            <td th:text="${sucursal.telefono}">Teléfono</td>
+			<td th:text="${sucursal.email}">Correo Electrónico</td>
+			<td th:text="${sucursal.estatus}">Estatus</td>
+			<td th:utext="${sucursal.horario}">Horario</td>
+			<td th:text="${sucursal.cuenta}">Cuenta</td>
+			<td th:text="${sucursal.usuario}">Usuario</td>
+			<td th:text="${sucursal.contrasena}">Contraseña</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
